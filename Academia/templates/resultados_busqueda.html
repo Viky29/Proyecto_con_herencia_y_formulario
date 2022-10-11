@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Se está buscando: <strong>{{query}}</strong></p>
+    {% if estudiantes %} 
+        <p>Estudiantes encontrados: {{estudiantes | length}} estudiantes</p>
+        <ul>
+            {% for estudiante in estudiantes %}
+                <li>
+                    {{estudiante.nombres}} &nbsp; {{estudiante.carrera}} &nbsp;
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Estudiante NO encontrado</p>
+    {% endif %}
+</body>
+</html>
